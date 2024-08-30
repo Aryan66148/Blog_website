@@ -1,0 +1,134 @@
+/* Cybernetic Theme for the Detail Page */
+
+body {
+    background: radial-gradient(circle, #1d1f21, #0a0a0a);
+    color: #00ffde;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .detail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: page-enter 1s ease-out;
+  }
+  
+  .detail-header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00ffde;
+    animation: header-glow 3s infinite alternate;
+  }
+  
+  .detail-header h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #00ffde, 0 0 20px #00ffde, 0 0 30px #00ffde;
+  }
+  
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    animation: content-fade 1.5s ease-in-out;
+  }
+  
+  .detail-content img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 5px solid #00ffde;
+    box-shadow: 0 0 15px #00ffde, 0 0 25px #00ffde;
+    animation: image-float 3s ease-in-out infinite alternate;
+  }
+  
+  .detail-text {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 1px solid #00ffde;
+    box-shadow: 0 0 20px #00ffde;
+  }
+  
+  .detail-text h2 {
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px #00ffde;
+  }
+  
+  .external-link {
+    color: #ff007f;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ff007f;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  
+  .external-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+  }
+  
+  .detail-footer {
+    margin-top: 20px;
+  }
+  
+  .back-button {
+    background: #00ffde;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #00ffde;
+  }
+  
+  .back-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffde, 0 0 30px #00ffde;
+  }
+  
+  @keyframes page-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes header-glow {
+    0% {
+      text-shadow: 0 0 10px #00ffde, 0 0 20px #00ffde;
+    }
+    100% {
+      text-shadow: 0 0 20px #00ffde, 0 0 40px #00ffde;
+    }
+  }
+  
+  @keyframes content-fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes image-float {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  

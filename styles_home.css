@@ -19,7 +19,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 1); /* Dark with slight transparency */
+    background-color: rgba(0, 0, 0, 1); 
     padding: 20px 0;
     z-index: 100;
     transition: background-color 0.3s ease;
@@ -80,93 +80,115 @@
     cursor: pointer;
   }
   
-  /* Hero Section with Sliding Animation */
-  .hero {
-    position: relative;
-    margin-top: 80px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Hide overflowing content for clean animation */
-    text-align: center;
-    padding: 0 5%;
+/* Hero Section with Sliding Animation */
+.hero {
+  position: relative;
+  margin-top: 80px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflowing content for clean animation */
+  text-align: center;
+  padding: 0 5%;
+  background-color: #000; 
+}
+
+/* Slider Container */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  animation: slide-animation 15s infinite; /* Duration and repeat settings */
+}
+
+/* Individual Slides */
+.slide {
+  min-width: 100%;
+  transition: opacity 1s ease;
+}
+
+/* Slide Images */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire slide */
+  filter: brightness(0.5) contrast(1.5); /* Enhanced contrast */
+}
+
+/* Animation Keyframes */
+@keyframes slide-animation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+/* Overlay Text on Hero Section */
+.hero .container {
+  position: relative;
+  z-index: 10;
+  color: #fff; /* Ensure text color contrasts well with background */
+}
+
+/* Heading Style */
+.hero h2 {
+  font-size: 3.5em;
+  color: #0ff; /* Neon cyan */
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  animation: glow 1.5s infinite alternate;
+  margin: 0; /* Remove default margin */
+}
+
+/* Paragraph Style */
+.hero p {
+  font-size: 1.5em;
+  margin: 20px 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  padding: 15px 30px;
+  color: #0ff;
+  border: 2px solid #0ff;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  transition: background-color 0.4s, transform 0.3s, box-shadow 0.4s;
+  box-shadow: 0 0 10px #0ff;
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Call-to-Action Button Hover State */
+.cta-button:hover {
+  background-color: #0ff;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0ff;
+}
+
+/* Glowing Text Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
   }
-  
-  .slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    animation: slide-animation 15s infinite; /* Duration and repeat settings */
+  to {
+    text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
   }
-  
-  .slide {
-    min-width: 100%;
-    transition: opacity 1s ease;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the entire slide */
-    filter: brightness(0.5) contrast(1.5); /* Enhanced contrast */
-  }
-  
-  /* Animation Keyframes */
-  @keyframes slide-animation {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
-  }
-  
-  /* Overlay Text on Hero Section */
-  .hero .container {
-    position: relative;
-    z-index: 10;
-  }
-  
-  .hero h2 {
-    font-size: 3.5em;
-    color: #0ff; /* Neon cyan */
-    text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
-    animation: glow 1.5s infinite alternate;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin: 20px 0;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-  }
-  
-  .cta-button {
-    padding: 15px 30px;
-    color: #0ff;
-    border: 2px solid #0ff;
-    background-color: transparent;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.1em;
-    transition: background-color 0.4s, transform 0.3s;
-    box-shadow: 0 0 10px #0ff;
-  }
-  
-  .cta-button:hover {
-    background-color: #0ff;
-    color: #000;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #0ff;
-  }
+}
+
   
   /* Featured Posts Section */
   .featured-posts {
     padding: 60px 5%;
-    background: linear-gradient(135deg, #000, #111); /* Dark gradient */
+    background: linear-gradient(135deg, #000, #111);
   }
   
   .featured-posts h2 {
@@ -229,14 +251,22 @@
   }
   
   .read-more {
-    color: #0ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+  color: #0ff;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  border: none; /* Remove any borders */
+  outline: none; /* Remove outline if present */
+  padding: 0; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+  display: inline-block; /* Ensure it behaves like a button */
+  transition: color 0.3s;
   }
   
   .read-more:hover {
     color: #ff0; /* Bright yellow on hover */
+    border: none; /* Ensure border is removed */
+    outline: none;
   }
   
   /* Newsletter Section */
