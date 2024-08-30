@@ -4,7 +4,6 @@ const API_BASE_URL = 'https://newsapi.org/v2';
 if (window.location.pathname?.includes('/')) {
   document.addEventListener('DOMContentLoaded', async () => {
     const postsContainer = document.getElementById('posts-container');
-    const sliderContainer = document.querySelector('.slider');
 
     try {
       const response = await fetch(`${API_BASE_URL}/everything?q=india&apiKey=${API_KEY}`);
@@ -18,7 +17,7 @@ if (window.location.pathname?.includes('/')) {
       if (data.status === 'ok' && data.articles.length) {
         // Populate the posts container
         postsContainer.innerHTML = data.articles
-          .slice(0, 9)
+          .slice(0, 20)
           .map(
             (article, index) => `
             <article class="post">
@@ -60,7 +59,7 @@ function populateSlider(articles) {
 
   // Create slide elements from the articles
   const slidesHTML = articles
-    .slice(0, 3) // Adjust number of slides as needed
+    .slice(0, 10) // Adjust number of slides as needed
     .map(article => `
       <div class="slide">
         <img src="${article.urlToImage || 'https://via.placeholder.com/334x188'}" alt="Slide Image">
