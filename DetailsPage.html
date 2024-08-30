@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+    <link rel="stylesheet" href="styles_home.css">
+    <!-- Correct the script reference here -->
+    <script defer src="Main.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">My Blog</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://c.ndtvimg.com/2024-08/pnqae3og_deadpool-killer-wade-wilson_625x300_28_August_24.jpg?downsize=334:188&w=334" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="https://c.ndtvimg.com/2024-08/pnqae3og_deadpool-killer-wade-wilson_625x300_28_August_24.jpg?downsize=334:188&w=334" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="https://c.ndtvimg.com/2024-08/pnqae3og_deadpool-killer-wade-wilson_625x300_28_August_24.jpg?downsize=334:188&w=334" alt="Slide 3">
+            </div>
+        </div>
+        <div class="container">
+            <h2>Welcome to My Blog</h2>
+            <p>Discover the latest news, articles, and stories that matter to you.</p>
+            <a href="#blog" class="cta-button">Explore Blog</a>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section class="featured-posts" id="blog">
+        <div class="container">
+            <h2>Featured Posts</h2>
+            <div class="posts" id="posts-container"></div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="contact">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates and articles directly in your inbox.</p>
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 My Blog. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">F</a>
+                <a href="#" class="social-icon">T</a>
+                <a href="#" class="social-icon">I</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
